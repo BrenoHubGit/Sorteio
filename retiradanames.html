@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link
+        rel="stylesheet"
+        href="https://pyscript.net/releases/2023.11.1/core.css"
+    />
+    <script
+        type="module"
+        src="https://pyscript.net/releases/2023.11.1/core.js"
+    ></script>
+    <title>Home</title>
+</head>
+<body>
+
+    <div id="balls">
+        <img src="ballred.svg" alt="one ball red in the left">
+        <img src="ballyellow.svg" alt="one ball yellow in the left">
+        <img src="ballgreen.svg" alt="one ball green in the left">
+    </div>
+
+    <div id="ajusteone">
+        <h1>Retire Seu amigo</h1>
+    </div>
+    
+    
+
+    <div id="ajustetwo">
+    <h2>Resultado do Sorteio:</h2>
+    </div>
+
+    <strong><div id="resultado"></div></strong>
+
+        <!-- Botão para realizar o sorteio -->
+        <button id="sortearButton">Sortear Amigo Secreto</button>
+
+        <!-- Resultados do sorteio -->
+        <div id="resultadoSorteio"></div>
+    
+        <script>
+            // Lista de nomes para o sorteio
+            const nomes = ['Breno', 'Enzo', 'Heloiza', 'Robson', 'Giovana', 'Wellington', 'Margarete', 'Noemy', 'Douglas', 'Aurea', 'Andrew', 'Kelvin', 'Débora', 'Derminda', 'João', 'Izabeli', 'Sandro', 'Dorival', 'Irene'];
+    
+            // Função para realizar o sorteio
+            function sortearAmigoSecreto(nomes) {
+                const nomesCopia = [...nomes];
+                const paresSorteio = {};
+    
+                for (const nome of nomes) {
+                    let amigoSecreto = nomesCopia[Math.floor(Math.random() * nomesCopia.length)];
+    
+                    while (amigoSecreto === nome) {
+                        amigoSecreto = nomesCopia[Math.floor(Math.random() * nomesCopia.length)];
+                    }
+    
+                    paresSorteio[nome] = amigoSecreto;
+                    nomesCopia.splice(nomesCopia.indexOf(amigoSecreto), 1);
+                }
+    
+                return paresSorteio;
+            }
+    
+            // Função para exibir os resultados
+            function exibirResultados(resultadoSorteio) {
+                const resultadoDiv = document.getElementById('resultadoSorteio');
+                resultadoDiv.innerHTML = "<p>Resultado do Sorteio:</p>";
+    
+            }
+    
+            // Adicionar evento de clique ao botão
+            const sortearButton = document.getElementById('sortearButton');
+            sortearButton.addEventListener('click', function () {
+                const resultadoSorteio = sortearAmigoSecreto(nomes);
+                exibirResultados(resultadoSorteio);
+    
+                // Notificação de alerta com o sorteado
+                const sorteado = resultadoSorteio[nomes[0]]; // Altere para o nome que você quiser exibir
+                alert(`O sorteado foi: ${sorteado}`);
+            });
+        </script>
+    
+
+    <div id="eyes">
+        <img src="Imagens/eyes_1f440.png" alt="emojis de olhos">
+    </div>
+
+    <div id="alerta">
+        <h4>Tire um print ou anote, mas NÃO esqueça seu amigo</h4>
+    </div>
+
+</body>
+</html>

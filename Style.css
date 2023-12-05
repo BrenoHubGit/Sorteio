@@ -1,0 +1,72 @@
+    body {
+        background-image: url(./Imagens/Desktop.jpg);
+        background-repeat: no-repeat;
+    }
+
+    #balls img{
+        margin-top: 45px;
+    }
+
+    a{
+        font-family: 'Manrope', sans-serif;
+        color: #ffff;
+        align-content: center;
+        text-decoration: none;
+        
+        border-radius: 5px;
+        margin-left: 140px;
+
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    h1{
+        font-family: 'Manrope', sans-serif;
+        color: #ffff;}
+
+    h2 {
+        font-family: 'Manrope', sans-serif;
+        color: #ffff;
+    }    
+    
+    h4{
+        font-family: 'Manrope', sans-serif;
+        color: #ffff;           
+    }
+
+
+    #gift img{
+        margin-top: 300px;
+        margin-left: 150px;
+    }
+
+    #noel img{
+        margin-top: 300px;
+        margin-left: 150px;
+    }
+
+    #santaclaus {
+        margin-left: 30px;
+    }
+    
+    #ajusteone {
+        margin-top: 300px;
+        margin-left: 50px;
+    }
+
+    #ajustetwo {
+        margin-left: 50px;
+    }
+
+    #botao {
+        margin-left: 120px;
+    }
+
+    #eyes {
+        margin-top: 200px;
+        margin-left: 150px;
+    }
+
+    #resultado {
+        font-family: 'Manrope', sans-serif;
+        color: #ffff; 
+    }
